@@ -1,0 +1,85 @@
+
+[     UTC     ] Logs for smart-trader-ai-f4nyfw7gduavm9ze3ljzt9.streamlit.app/
+────────────────────────────────────────────────────────────────────────────────────────
+[16:18:49] 🚀 Starting up repository: 'smart-trader-ai', branch: 'main', main module: 'main (1).py'
+[16:18:49] 🐙 Cloning repository...
+[16:18:49] 🐙 Cloning into '/mount/src/smart-trader-ai'...
+
+[16:18:49] 🐙 Cloned repository!
+[16:18:49] 🐙 Pulling code changes from Github...
+[16:18:50] 📦 Processing dependencies...
+Check if streamlit is installed
+cat: /mount/admin/install_path: No such file or directory
+
+──────────────────────────────── Installing Streamlit ──────────────────────────────────
+
+Using uv pip install.
+Using Python 3.12.10 environment at /home/adminuser/venv
+Resolved 37 packages in 419ms
+Prepared 37 packages in 1.70s
+Installed 37 packages in 102ms
+ + altair==5.5.0
+ + attrs==25.3.0
+ + blinker==1.9.0
+ + cachetools==5.5.2
+ + certifi==2025.4.26
+ + charset-normalizer==3.4.2
+ + click==[2025-05-17 16:18:52.633297] 8.2.0
+ + gitdb==4.0.12
+ + gitpython==3.1.44
+ + idna==3.10
+ + jinja2==3.1.6
+ + jsonschema==4.23.0
+ + jsonschema-specifications==2025.4.1
+ + markupsafe==3.0.2
+ + narwhals==1.39.1
+ + numpy==2.2.5
+ + packaging==24.2
+ + pandas==2.2.3
+ + pillow==[2025-05-17 16:18:52.633682] 11.2.1
+ + protobuf==6.31.0
+ + pyarrow==20.0.0
+ + pydeck==0.9.1
+ + python-dateutil==2.9.0.post0
+ + pytz==2025.2
+ + [2025-05-17 16:18:52.633841] referencing==0.36.2
+ + requests==2.32.3
+ + rpds-py==0.25.0
+ + six==1.17.0
+ + smmap==5.0.2[2025-05-17 16:18:52.634059] 
+ + streamlit==1.45.1
+ + tenacity==9.1.2
+ + toml==0.10.2
+ + tornado==6.5
+ + typing-extensions[2025-05-17 16:18:52.634221] ==4.13.2
+ + tzdata==2025.2
+ + urllib3==2.4.0
+ + watchdog==6.0.0
+
+────────────────────────────────────────────────────────────────────────────────────────
+
+[16:18:53] 📦 Processed dependencies!
+cat: /mount/admin/install_path: No such file or directory
+
+
+
+2025-05-17 16:19:18.984 Uncaught app execution
+Traceback (most recent call last):
+  File "/home/adminuser/venv/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/exec_code.py", line 121, in exec_func_with_error_handling
+    result = func()
+             ^^^^^^
+  File "/home/adminuser/venv/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 645, in code_to_exec
+    exec(code, module.__dict__)
+  File "/mount/src/smart-trader-ai/main (1).py", line 3, in <module>
+    import pyrebase
+ModuleNotFoundError: No module named 'pyrebase'
+2025-05-17 16:19:48.076 Uncaught app execution
+Traceback (most recent call last):
+  File "/home/adminuser/venv/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/exec_code.py", line 121, in exec_func_with_error_handling
+    result = func()
+             ^^^^^^
+  File "/home/adminuser/venv/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 645, in code_to_exec
+    exec(code, module.__dict__)
+  File "/mount/src/smart-trader-ai/main (1).py", line 3, in <module>
+    import pyrebase
+ModuleNotFoundError: No module named 'pyrebase'
