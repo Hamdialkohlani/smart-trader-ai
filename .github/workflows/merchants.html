@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>بيانات التجار - GulfScope</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .merchants-container {
+            background-color: #ffffff;
+            padding: 30px;
+            max-width: 1000px;
+            margin: 40px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .merchants-container h2 {
+            color: #003366;
+            margin-bottom: 20px;
+        }
+
+        .merchant-item {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .merchant-item:last-child {
+            border-bottom: none;
+        }
+
+        .merchant-item p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+
+        .merchant-item span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>بيانات التجار المسجلة</h1>
+    <p>قائمة بالتجار الذين تم إدخال بياناتهم</p>
+</header>
+
+<div class="merchants-container" id="merchants-list">
+    <h2>🔽 يتم تحميل البيانات من Firebase...</h2>
+</div>
+
+<!-- Firebase Scripts -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+<script src="firebase-config.js"></script>
+
+<script>
+    const merchantsList = document.getElementById("merchants-list");
+    merchantsList.innerHTML = "<h2>🔄 جارٍ تحميل بيانات التجار...</h2>";
+
+    firebase.database().ref("merchants").once("value", function(snapshot) {
+        const data = snapshot.val();
+        if (data) {
+            let html = "<h2>📋 قائمة التجار</h2>";
+            Object.values(data).forEach(merchant => {
+                html += `
+                <div class="merchant-item">
+                    <p><span>الاسم:</span> ${merchant.name}</p>
+                    <p><span>المنتج:</span> ${merchant.product}</p>
+                    <p><span>الفئة:</span> ${merchant.category}</p>
+                    <p><span>الدولة:</span> ${merchant.country}</p>
+                </div>`;
+            });
+            merchantsList.innerHTML = html;
+        } else {
+            merchantsList.innerHTML = "<h2>❌ لا توجد بيانات مسجلة حالياً.</h2>";
+        }
+    });
+</script>
+
+<footer>
+    <p>© 2025 GulfScope - جميع الحقوق محفوظة</p>
+</footer>
+
+</body>
+</html>

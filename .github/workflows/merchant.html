@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>تسجيل التاجر - GulfScope</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .form-container {
+            background-color: #ffffff;
+            padding: 30px;
+            max-width: 600px;
+            margin: 40px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .form-container label {
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: bold;
+        }
+
+        .form-container input, .form-container select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        .form-container button {
+            margin-top: 20px;
+            padding: 12px 20px;
+            background-color: #003366;
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #002244;
+        }
+
+        .confirmation {
+            text-align: center;
+            color: green;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>تسجيل التاجر</h1>
+    <p>حلل وضع منتجك في السوق الخليجي</p>
+</header>
+
+<div class="form-container">
+    <label for="name">اسم التاجر:</label>
+    <input type="text" id="name" placeholder="مثال: متجر الراية للعطور">
+
+    <label for="product">رابط المنتج أو اسمه:</label>
+    <input type="text" id="product" placeholder="مثال: عطر بخاخ فاخر">
+
+    <label for="category">الفئة:</label>
+    <select id="category">
+        <option value="عطور">عطور</option>
+        <option value="ملابس">ملابس</option>
+        <option value="أجهزة إلكترونية">أجهزة إلكترونية</option>
+        <option value="مستلزمات منزلية">مستلزمات منزلية</option>
+        <option value="أخرى">أخرى</option>
+    </select>
+
+    <label for="country">الدولة:</label>
+    <select id="country">
+        <option value="السعودية">السعودية</option>
+        <option value="الإمارات">الإمارات</option>
+        <option value="الكويت">الكويت</option>
+        <option value="قطر">قطر</option>
+        <option value="عُمان">عُمان</option>
+        <option value="البحرين">البحرين</option>
+    </select>
+
+    <button onclick="submitForm()">احصل على تحليل مبدئي</button>
+
+    <div class="confirmation" id="confirmation" style="display:none;">
+        ✅ تم تسجيل بياناتك بنجاح! ستظهر نتائج تحليل مبدئي في الصفحة التالية.
+    </div>
+</div>
+
+<script>
+    function submitForm() {
+        const name = document.getElementById("name").value.trim();
+        const product = document.getElementById("product").value.trim();
+        const category = document.getElementById("category").value;
+        const country = document.getElementById("country").value;
+
+        if (name && product) {
+            document.getElementById("confirmation").style.display = "block";
+        } else {
+            alert("يرجى تعبئة جميع الحقول المطلوبة.");
+        }
+    }
+</script>
+
+<footer>
+    <p>© 2025 GulfScope - جميع الحقوق محفوظة</p>
+</footer>
+
+</body>
+</html>
